@@ -4,12 +4,21 @@
 
 
 $(function () {
+  console.log(dayjs())
 
   var saveButton = $('.saveBtn')
-  saveButton.on('click', function () {
-    this.localStorage.setItem("$(:input)", this.localStorage );
+localStorage.getItem
 
-});
+//
+   // this.localStorage.setItem("$(:input)", this.localStorage );
+   //  var saveButton = $('.saveBtn')
+   
+  saveButton.on('click', function () {
+    var data= $(this).siblings("textarea").val()
+    var id = $(this).parent().attr("id")
+    localStorage.setItem(id,data)
+  });
+
 
 
   
@@ -31,6 +40,16 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
+
+
+
+  
   //
-  // TODO: Add code to display the current date in the header of the page.
+  // TODO: Add code to display the current date in the header of the page. DONE! 
+  var timeNow = dayjs();
+  console.log(timeNow);
+  var currentDate = timeNow.format('MMM DD, YYYY');
+  console.log(currentDate);
+  $('#currentDay').text(currentDate);
 });
+
