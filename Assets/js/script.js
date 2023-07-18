@@ -21,11 +21,11 @@ localStorage.getItem
     localStorage.setItem(id,data)
   });
   $(document).ready(function() {
-   var timeBlocks = $('.row');
+   var timeBlocks = $('div.row');
    console.log(timeBlocks);
    console.log(typeof timeBlocks);
    for (i=0; i< timeBlocks.length; i++){
-     timeBlocks[i].addClass('.past');
+    //  timeBlocks[i].addClass('past');
     console.log(timeBlocks[i].children('id'));
     // make an id variable = timeblocks[i]Traverse to the ID
     //localStorage.getItem(id)
