@@ -7,13 +7,13 @@ $(function () {
   console.log(dayjs())
 
   var saveButton = $('.saveBtn');
-localStorage.getItem
+// localStorage.getItem
 
 //
    // this.localStorage.setItem("$(:input)", this.localStorage );
    //  var saveButton = $('.saveBtn')
 
-  $
+  
    
   saveButton.on('click', function () {
     var data= $(this).siblings("textarea").val()
@@ -26,14 +26,29 @@ localStorage.getItem
    console.log(typeof timeBlocks);
    for (i=0; i< timeBlocks.length; i++){
     //  timeBlocks[i].addClass('past');
-    console.log(timeBlocks[i].children('id'));
+    var id = timeBlocks[i].id;
+    var hour =dayjs().format('H')
+    if (id === hour){
+      id.parent().addClass('present');
+    } else if (id<hour){
+      id.parent().removeClass('future');
+      id.parent().addClass('past');
+    }
+    console.log(timeBlocks[i].id);        
+    console.log(timeBlocks[i].children[1]);
+    // var id = 
     // make an id variable = timeblocks[i]Traverse to the ID
     //localStorage.getItem(id)
   }
-  //   console.log();
   
-  var hour = timeBlocks[i]
-  // if (time)
+  // //   console.log();
+  // $(document).ready(function () {}
+  //   $('.row').each(function() {
+  //     if($(this).children()is
+  //   })
+  // )
+  // var hour = timeBlocks[i]
+  // // if (time)
 
   //   localStorage.getItem
   //  }
