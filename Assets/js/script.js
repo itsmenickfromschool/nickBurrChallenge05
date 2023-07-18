@@ -6,18 +6,40 @@
 $(function () {
   console.log(dayjs())
 
-  var saveButton = $('.saveBtn')
+  var saveButton = $('.saveBtn');
 localStorage.getItem
 
 //
    // this.localStorage.setItem("$(:input)", this.localStorage );
    //  var saveButton = $('.saveBtn')
+
+  $
    
   saveButton.on('click', function () {
     var data= $(this).siblings("textarea").val()
     var id = $(this).parent().attr("id")
     localStorage.setItem(id,data)
   });
+  $(document).ready(function() {
+   var timeBlocks = $('.row');
+   console.log(timeBlocks);
+   console.log(typeof timeBlocks);
+   for (i=0; i< timeBlocks.length; i++){
+     timeBlocks[i].addClass('.past');
+    console.log(timeBlocks[i].children('id'));
+    // make an id variable = timeblocks[i]Traverse to the ID
+    //localStorage.getItem(id)
+  }
+  //   console.log();
+  
+  var hour = timeBlocks[i]
+  // if (time)
+
+  //   localStorage.getItem
+  //  }
+      
+});
+  
 
 
 
@@ -43,12 +65,12 @@ localStorage.getItem
 
 
 
+
   
   //
   // TODO: Add code to display the current date in the header of the page. DONE! 
-  var timeNow = dayjs();
-  console.log(timeNow);
-  var currentDate = timeNow.format('MMM DD, YYYY');
+  var today = dayjs();
+  var currentDate = today.format('MMM DD, YYYY');
   console.log(currentDate);
   $('#currentDay').text(currentDate);
 });
