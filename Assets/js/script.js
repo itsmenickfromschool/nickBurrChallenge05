@@ -29,46 +29,44 @@ $(function () {
     //  timeBlocks[i].addClass('past');
     var id = timeBlocks[i].id;
     var hour =dayjs().format('H')
-    // console.log(hour);
-    // console.log("id:", id);
+   
+    console.log("hour:" + hour);
+   
+    console.log("id:", id);
     // take out remove classes and take classes out of html
-    console.log(hour == id);
+    console.log(hour === id);
     if (id == hour){
-      $(`#${id}`).removeClass('past');
-      $(`#${id}`).removeClass('future');
+      // $(`#${id}`).removeClass('past');
+      // $(`#${id}`).removeClass('future');
       $(`#${id}`).addClass('present');
       
-    } else if (id<hour){
-      // id.removeClass('future');
-      $(`#${id}`).removeClass('present');
-      $(`#${id}`).removeClass('future');
+    } else if (id > hour){
+        // $(`#${id}`).removeClass('past');
+        // $(`#${id}`).removeClass('present');
+        $(`#${id}`).addClass('future');
+      
+    } else if (id < hour){
+      // $(`#${id}`).removeClass('present');
+      // $(`#${id}`).removeClass('future');
       $(`#${id}`).addClass('past');
-    } else {
       // id.removeClass('past');
-      $(`#${id}`).removeClass('past');
-      $(`#${id}`).removeClass('present');
-      $(`#${id}`).addClass('future');
     }
-    var hourText = localStorage.getItem(id);  
-    console.log(hourText);     
+    var hourText = localStorage.getItem(id);
+    var textArea = $('textarea');  
+    console.log(hourText);
+    if (hourText !== null) {
+      $(`#${id}`).children(textArea).val(hourText);
+    } 
+    //add text to the text area of the var id
+    //selector.children.textarea.val(hourtext) if hour text != null then set it to it.
+
     // console.log(timeBlocks[i].children[1]);
     // var id = 
     // make an id variable = timeblocks[i]Traverse to the ID
     //localStorage.getItem(id)
   }
   
-  // //   console.log();
-  // $(document).ready(function () {}
-  //   $('.row').each(function() {
-  //     if($(this).children()is
-  //   })
-  // )
-  // var hour = timeBlocks[i]
-  // // if (time)
-
-  //   localStorage.getItem
-  //  }
-      
+  
 });
   
 
