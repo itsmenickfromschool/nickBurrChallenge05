@@ -20,6 +20,7 @@ $(function () {
     var id = $(this).parent().attr("id")
     localStorage.setItem(id,data)
   });
+
   $(document).ready(function() {
    var timeBlocks = $('div.row');
    console.log(timeBlocks);
@@ -28,14 +29,29 @@ $(function () {
     //  timeBlocks[i].addClass('past');
     var id = timeBlocks[i].id;
     var hour =dayjs().format('H')
-    if (id === hour){
-      id.parent().addClass('present');
+    // console.log(hour);
+    // console.log("id:", id);
+    // take out remove classes and take classes out of html
+    console.log(hour == id);
+    if (id == hour){
+      $(`#${id}`).removeClass('past');
+      $(`#${id}`).removeClass('future');
+      $(`#${id}`).addClass('present');
+      
     } else if (id<hour){
-      id.parent().removeClass('future');
-      id.parent().addClass('past');
+      // id.removeClass('future');
+      $(`#${id}`).removeClass('present');
+      $(`#${id}`).removeClass('future');
+      $(`#${id}`).addClass('past');
+    } else {
+      // id.removeClass('past');
+      $(`#${id}`).removeClass('past');
+      $(`#${id}`).removeClass('present');
+      $(`#${id}`).addClass('future');
     }
-    console.log(timeBlocks[i].id);        
-    console.log(timeBlocks[i].children[1]);
+    var hourText = localStorage.getItem(id);  
+    console.log(hourText);     
+    // console.log(timeBlocks[i].children[1]);
     // var id = 
     // make an id variable = timeblocks[i]Traverse to the ID
     //localStorage.getItem(id)
