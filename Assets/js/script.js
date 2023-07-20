@@ -27,15 +27,20 @@ $(function () {
    console.log(typeof timeBlocks);
    for (i=0; i< timeBlocks.length; i++){
     //  timeBlocks[i].addClass('past');
-    var id = timeBlocks[i].id;
-    var hour =dayjs().format('H')
+    var id = parseInt(timeBlocks[i].id);
+    // id = parseInt(id);
+    var hour =parseInt(dayjs().format('H'));
+    // hour = parseInt(hour);
    
     console.log("hour:" + hour);
-   
+
     console.log("id:", id);
+    console.log(typeof hour);
+    console.log(typeof id);
     // take out remove classes and take classes out of html
-    console.log(hour === id);
-    if (id == hour){
+    console.log("hour = id:" + hour === id);
+    console.log("hour = id:" + hour )
+    if (id === hour){
       // $(`#${id}`).removeClass('past');
       // $(`#${id}`).removeClass('future');
       $(`#${id}`).addClass('present');
