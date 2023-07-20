@@ -10,7 +10,7 @@ If you want to try this out on your local machine feel free to clone the reposit
 
 ## Usage
 
-This app is fairly simple. When the webpage loads it will check if you have used it before by getting the localStorage from your browser, if so, the appointments you scheduled should have already populated. If not, all of the time-blocks will be blank. To make an appointment you should click on the time block you want, this will allow you to type your appointment in. In order to save it press the icon on the left that shows the save icon. (an OG floppy disk).
+This app is fairly simple. When the webpage loads it will check if you have used it before by getting the localStorage from your browser, if so, the appointments you scheduled should have already populated. If not, all of the time-blocks will be blank. To make an appointment you should click on the time block you want, this will allow you to type your appointment in. In order to save it press the icon on the left that shows the save icon (an OG floppy disk). The red time-block represents the current hour, the green time-blocks are the future hours, and the grey time-blocks are past hours.
 ![Example](./Images/example.jpg)
 
 ## Collaborators
