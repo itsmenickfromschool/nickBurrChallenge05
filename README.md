@@ -15,7 +15,7 @@ This app is fairly simple. When the webpage loads it will check if you have used
 
 ## Collaborators
 
-This app was built by me, Nicholas Burr, however I did have some help with starter code provided by the EDX2U bootcamp. Additionally I had help from Trevor Oveson, one of my course Teaching Assistants learning about template literals. I also recieved some general coding suggestions and debugging help from the askBCS staff at EDX2U. 
+This app was built by me, Nicholas Burr, however I did have some help with starter code provided by the EDX2U bootcamp. Additionally I had help from Trevor Oveson, one of my course Teaching Assistants learning about template literals. I also recieved some general code suggestions and debugging help from the askBCS staff at EDX2U, specifically with putting items into localStorage from pressing the save button. 
 
 Finally I used Jquery, as well as DayJS on this application. 
 

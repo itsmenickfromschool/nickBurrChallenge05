@@ -1,20 +1,8 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
 
 $(function () {
   console.log(dayjs())
 
   var saveButton = $('.saveBtn');
-// localStorage.getItem
-
-//
-   // this.localStorage.setItem("$(:input)", this.localStorage );
-   //  var saveButton = $('.saveBtn')
-
-  
-   
   saveButton.on('click', function () {
     var data= $(this).siblings("textarea").val()
     var id = $(this).parent().attr("id")
@@ -26,49 +14,27 @@ $(function () {
    console.log(timeBlocks);
    console.log(typeof timeBlocks);
    for (i=0; i< timeBlocks.length; i++){
-    //  timeBlocks[i].addClass('past');
     var id = parseInt(timeBlocks[i].id);
-    // id = parseInt(id);
     var hour =parseInt(dayjs().format('H'));
-    // hour = parseInt(hour);
-   
-    console.log("hour:" + hour);
-
-    console.log("id:", id);
-    console.log(typeof hour);
-    console.log(typeof id);
-    // take out remove classes and take classes out of html
-    console.log("hour = id:" + hour === id);
-    console.log("hour = id:" + hour )
+    var hourText = localStorage.getItem(id);
+    var textArea = $('textarea');  // take out remove classes and take classes out of html
+  
     if (id === hour){
-      // $(`#${id}`).removeClass('past');
-      // $(`#${id}`).removeClass('future');
       $(`#${id}`).addClass('present');
-      
+
     } else if (id > hour){
-        // $(`#${id}`).removeClass('past');
-        // $(`#${id}`).removeClass('present');
         $(`#${id}`).addClass('future');
       
     } else if (id < hour){
-      // $(`#${id}`).removeClass('present');
-      // $(`#${id}`).removeClass('future');
+     
       $(`#${id}`).addClass('past');
-      // id.removeClass('past');
     }
-    var hourText = localStorage.getItem(id);
-    var textArea = $('textarea');  
-    console.log(hourText);
+
+   
+   
     if (hourText !== null) {
       $(`#${id}`).children(textArea).val(hourText);
     } 
-    //add text to the text area of the var id
-    //selector.children.textarea.val(hourtext) if hour text != null then set it to it.
-
-    // console.log(timeBlocks[i].children[1]);
-    // var id = 
-    // make an id variable = timeblocks[i]Traverse to the ID
-    //localStorage.getItem(id)
   }
   
   
